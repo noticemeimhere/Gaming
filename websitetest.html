@@ -5,6 +5,9 @@
     <title>Peak website innovation of 2003</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+  <style>
+
+  </style>
     <body>
         <h1>Heading 1</h1>
         <p>Paragraph 1</p>
@@ -18,25 +21,38 @@
           </audio>
           <embed src="7-1 - Avengers Suite-Alto_Saxophone.pdf" type="pdf">
             <h1 id="ooooooooo_you_like_html_dont_you">L, error</h1>
-            <label for="file">tf2 update progress:</label>
-            <progress id="hl3_error" value="32" max="1000"> 32% </progress>
-            <button onclick="incrementProgress()">call in HR tf2</button>
+            <label id="tf2_update_progress" for="file">tf2 update progress:</label>
+            <progress id="hl3_error" value="32" max="1000" style="color: rebeccapurple;">VAVLe Software</progress>
+              <button id="button_call_in_hr" onclick="call_in_HR()">call in HR team to update faster</button>
+              <button id="button_wipe_valve_servers" onclick="wipe_valve_servers()">wipe valve servers</button>
+            <h1 id="tf2_update_status">TF2 Update Status: UPDATING</h1>
             <script>
               var progress = document.getElementById("hl3_error");
               
-              function incrementProgress() {
+              function call_in_HR() {
                 var intervalId = setInterval(function() {
                   progress.value += 0.1;
             
                   if (progress.value == progress.max) {
                     clearInterval(intervalId);
                     progress.value = 0;
+                    document.getElementById("tf2_update_status").textContent = "TF2 Update Status: DONE";
                   }
                 }, 100);
               }
+
+              function wipe_valve_servers()
+              {
+                document.getElementById("hl3_error").remove();
+                document.getElementById("tf2_update_status").textContent = "TF2 Update Status: WIPED";
+                document.getElementById("tf2_update_status").style.color = "red";
+                document.getElementById("button_call_in_hr").remove();
+                document.getElementById("button_wipe_valve_servers").remove();
+                document.getElementById("tf2_update_progress").remove();
+              }
             
               // Start the incrementing process
-              incrementProgress();
+              call_in_HR();
             </script>
     </body>
 </html>
